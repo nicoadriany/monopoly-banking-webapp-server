@@ -1,7 +1,7 @@
 import logger from "node-color-log";
 import Player from "../../models/player";
 import User from "../../models/user";
-import serverResponse from "../../serverResponse";
+import serverResponse from "../serverResponse";
 import playerService from "../../services/playerService";
 import userService from "../../services/userService";
 

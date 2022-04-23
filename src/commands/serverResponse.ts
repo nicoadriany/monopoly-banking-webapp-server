@@ -1,11 +1,11 @@
 import logger from "node-color-log";
 import { connection } from "websocket";
-import Player from "./models/player";
-import Transaction from "./models/transaction";
-import User from "./models/user";
-import playerService from "./services/playerService";
-import transactionService from "./services/transactionService";
-import userService from "./services/userService";
+import Player from "../models/player";
+import Transaction from "../models/transaction";
+import User from "../models/user";
+import playerService from "../services/playerService";
+import transactionService from "../services/transactionService";
+import userService from "../services/userService";
 
 class ServerResponse {
 	sendPlayerNotification(player: Player, message: string) {

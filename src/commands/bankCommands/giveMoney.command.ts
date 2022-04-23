@@ -2,7 +2,7 @@ import logger from "node-color-log";
 import { isValidNumber } from "../../helpers/helper";
 import Transaction from "../../models/transaction";
 import User from "../../models/user";
-import serverResponse from "../../serverResponse";
+import serverResponse from "../serverResponse";
 import playerService from "../../services/playerService";
 import transactionService from "../../services/transactionService";
 import userService from "../../services/userService";

@@ -11,7 +11,7 @@ import User from "./models/user";
 
 import userService from "./services/userService";
 import CommandManager from "./commands/commandManager";
-import serverResponse from "./serverResponse";
+import serverResponse from "./commands/serverResponse";
 
 const cmdManager = new CommandManager();
 

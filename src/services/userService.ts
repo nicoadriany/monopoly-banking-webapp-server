@@ -1,6 +1,6 @@
 import Player from "../models/player";
 import User from "../models/user";
-import serverResponse from "../serverResponse";
+import serverResponse from "../commands/serverResponse";
 
 class UserService {
 	private users: User[];
