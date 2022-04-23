@@ -1,0 +1,20 @@
+{
+  "name": "monopoly-banking-server",
+  "version": "1.0.0",
+  "description": "A banking server for monopoly",
+  "main": "build/server.js",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "node-color-log": "^7.0.0",
+    "websocket": "^1.0.34",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon-test": "nodemon build/server.js",
+    "ts-watch": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
