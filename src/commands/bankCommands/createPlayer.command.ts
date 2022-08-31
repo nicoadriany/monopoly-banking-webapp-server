@@ -21,6 +21,8 @@ export default function createPlayer(user: User, data: any) {
 
 	playerService.add(newPlayer);
 	logger.info("New player '" + name + " created'");
+  serverResponse.sendNotification(user, `Der Spieler ${name} wurde erstellt`);
 
 	serverResponse.broadcastAddPlayer(newPlayer);
+  serverResponse.sendOnlineStatusToBank(newPlayer, false);
 }
