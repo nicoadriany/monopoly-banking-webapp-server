@@ -21,11 +21,13 @@ export default function sendMoney(user: User, data: any) {
 
 	if (amount <= 0) {
 		logger.info("Player '" + sender.name + "' was trying to send an invalid amount (" + amount + ") of money");
+    serverResponse.sendNotification(user, "Guter Versuch :)");
 		return;
 	}
 
 	if (sender.money < amount) {
 		logger.info("Player '" + sender.name + "' was unable to send money. Player balance: '" + sender.money + "', Amount: '" + amount + "'");
+    serverResponse.sendNotification(user, "Du hast nicht genug Geld");
 		return;
 	}
 
@@ -33,6 +35,7 @@ export default function sendMoney(user: User, data: any) {
 
 	if (receiver == null) {
 		logger.info("Payment receiver (" + receiverName + ") was not found");
+    serverResponse.sendNotification(user, "Der Empfänger war ungültig");
 		return;
 	}
 
