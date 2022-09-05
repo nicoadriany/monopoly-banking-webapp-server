@@ -27,11 +27,17 @@ export default function specialLogin(user: User, data: any) {
 		return;
 	}
 
+  if (player.isLoginLocked) {
+    logger.debug("Unable to specialLogin to player '" + name + "'. Account is locked");
+    serverResponse.sendNotification(user, "Login mit diesem Account nicht möglich");
+    return;
+  }
+
 	if (userService.getAllUsers().find(u => u.getPlayer() == player) != null) {
 		logger.debug("The user '" + name + "' is already logged in");
 		serverResponse.sendNotification(user, "Der Spieler ist bereits eingeloggt");
 		return;
-	}
+  }
 
 	user.setPlayer(player);
 	logger.info("Player '" + player.name + "' is now connected to '" + user.uid + "'");

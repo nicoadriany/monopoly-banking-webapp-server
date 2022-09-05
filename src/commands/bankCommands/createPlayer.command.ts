@@ -7,6 +7,8 @@ import playerService from "../../services/playerService";
 export default function createPlayer(user: User, data: any) {
 	let name: string = data.name;
 
+  name = name.replace(" ", "_");
+
 	if (name == null || name.length <= 0) {
 		logger.info("Invalid data given");
 		return;

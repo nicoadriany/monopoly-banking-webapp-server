@@ -10,8 +10,7 @@ class PlayerService {
 		this.players = [];
 
 		this.add(new Player(this.NAME_BANK, 150000000, true));
-		this.add(new Player(this.NAME_MITTE, 0, true));
-		this.add(new Player("Test", 15000000, false));
+		this.add(new Player(this.NAME_MITTE, 0, true, true));
 	}
 
 	add(player: Player) {
