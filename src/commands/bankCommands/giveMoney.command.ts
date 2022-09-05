@@ -12,8 +12,9 @@ export default function giveMoney(user: User, data: any) {
 	let amount: number = data.amount;
 	let reason: string = data.reason;
 
-	if (name == null || name.length < 1 || !isValidNumber(amount) || amount == 0) {
+	if (name == null || name.length < 1 || !isValidNumber(amount) || amount < 1) {
 		logger.info("Invalid data given");
+    serverResponse.sendNotification(user, "Invalid data given");
 		return;
 	}
 
