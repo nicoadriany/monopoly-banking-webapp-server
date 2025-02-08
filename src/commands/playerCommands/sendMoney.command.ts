@@ -14,7 +14,7 @@ export default function sendMoney(user: User, data: any) {
 
 	let sender: Player = user.getPlayer();
 
-	if (receiverName == null || !isValidNumber(amount)) {
+	if (receiverName == null || !Number.isInteger(amount)) {
 		logger.debug("Invalid data given");
 		return;
 	}

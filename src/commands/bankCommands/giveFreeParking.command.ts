@@ -6,6 +6,7 @@ import serverResponse from "../serverResponse";
 import playerService from "../../services/playerService";
 import transactionService from "../../services/transactionService";
 import { formatNumber } from "../../helpers/helper";
+import userService from "../../services/userService";
 
 export default function giveFreeParking(user: User, data: any) {
 	let name: string = data.name;
@@ -40,4 +41,5 @@ export default function giveFreeParking(user: User, data: any) {
 
 	serverResponse.sendTransaction(player, transaction);
 	serverResponse.broadcastPlayerNotification(player.name + " hat " + formatNumber(amount) + " aus der Mitte erhalten");
+	serverResponse.sendOwnData(userService.getByConnectedPlayer(player));
 }
