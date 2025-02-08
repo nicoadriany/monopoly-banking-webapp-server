@@ -14,6 +14,10 @@ import triggerSpecialAction from "./bankCommands/triggerSpecialAction.command";
 import CommandType from "../models/commandType";
 import User from "../models/user";
 import playerService from "../services/playerService";
+import broadcastRichest from "./bankCommands/broadcastRichest.command";
+import broadcastPoorest from "./bankCommands/broadcastPoorest.command";
+import tellRanking from "./bankCommands/tellRanking.command";
+import broadcastFreeParkingAmount from "./bankCommands/broadcastFreeParkingAmount.command";
 
 export default class CommandManager {
 	private guestCommands: Map<string, Function>;
@@ -44,6 +48,10 @@ export default class CommandManager {
 		this.registerCommand("giveFreeParking", giveFreeParking, CommandType.BankCommand);
 		this.registerCommand("giveMoney", giveMoney, CommandType.BankCommand);
 		this.registerCommand("triggerSpecialAction", triggerSpecialAction, CommandType.BankCommand);
+		this.registerCommand("broadcastRichest", broadcastRichest, CommandType.BankCommand);
+		this.registerCommand("broadcastPoorest", broadcastPoorest, CommandType.BankCommand);
+		this.registerCommand("tellRanking", tellRanking, CommandType.BankCommand);
+		this.registerCommand("broadcastFreeParkingAmount", broadcastFreeParkingAmount, CommandType.BankCommand);
 	}
 
 	registerCommand(command: string, callback: Function, cmdType: CommandType) {

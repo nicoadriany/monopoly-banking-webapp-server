@@ -31,9 +31,9 @@ export default function giveFreeParking(user: User, data: any) {
 	}
 
 	let amount = freeParkingAccount.money;
+	freeParkingAccount.money = 0;
 
 	player.money += amount;
-	freeParkingAccount.money = 0;
 
 	let transaction = new Transaction(new Date(), freeParkingAccount.name, player.name, amount, "Frei Parken");
 
