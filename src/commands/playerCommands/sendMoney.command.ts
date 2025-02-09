@@ -19,6 +19,12 @@ export default function sendMoney(user: User, data: any) {
 		return;
 	}
 
+	if (sender.name == receiverName) {
+		logger.info("Player '" + sender.name + "' was trying to send money to himself");
+		serverResponse.sendNotification(user, "Du kannst dir selbst kein Geld schicken");
+		return;
+	}
+
 	if (amount <= 0) {
 		logger.info("Player '" + sender.name + "' was trying to send an invalid amount (" + amount + ") of money");
     serverResponse.sendNotification(user, "Guter Versuch :)");
