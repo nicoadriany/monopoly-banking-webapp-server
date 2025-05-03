@@ -4,6 +4,7 @@
   "description": "A banking server for monopoly",
   "main": "build/server.js",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "http": "^0.0.1-security",
     "node-color-log": "^7.0.0",
     "ts-node": "^10.9.1",
