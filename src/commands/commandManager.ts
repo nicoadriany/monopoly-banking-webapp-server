@@ -18,6 +18,9 @@ import broadcastRichest from "./bankCommands/broadcastRichest.command";
 import broadcastPoorest from "./bankCommands/broadcastPoorest.command";
 import tellRanking from "./bankCommands/tellRanking.command";
 import broadcastFreeParkingAmount from "./bankCommands/broadcastFreeParkingAmount.command";
+import saveGame from "./bankCommands/saveGame.command";
+import loadGame from "./bankCommands/loadGame.command";
+import resetGame from "./bankCommands/resetGame.command";
 
 export default class CommandManager {
 	private guestCommands: Map<string, Function>;
@@ -52,6 +55,9 @@ export default class CommandManager {
 		this.registerCommand("broadcastPoorest", broadcastPoorest, CommandType.BankCommand);
 		this.registerCommand("tellRanking", tellRanking, CommandType.BankCommand);
 		this.registerCommand("broadcastFreeParkingAmount", broadcastFreeParkingAmount, CommandType.BankCommand);
+		this.registerCommand("saveGame", saveGame, CommandType.BankCommand);
+		this.registerCommand("loadGame", loadGame, CommandType.BankCommand);
+		this.registerCommand("resetGame", resetGame, CommandType.BankCommand);
 	}
 
 	registerCommand(command: string, callback: Function, cmdType: CommandType) {

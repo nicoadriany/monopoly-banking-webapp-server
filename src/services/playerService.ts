@@ -8,7 +8,10 @@ class PlayerService {
 
 	constructor() {
 		this.players = [];
+		this.setInitialPlayers();
+	}
 
+	private setInitialPlayers(): void {
 		this.add(new Player(this.NAME_BANK, 150000000, true));
 		this.add(new Player(this.NAME_MITTE, 0, true, true));
 	}
@@ -31,6 +34,15 @@ class PlayerService {
 
 	getAllPlayers() {
 		return this.players;
+	}
+
+	setAllPlayers(players: Player[]) {
+		this.players = players;
+	}
+
+	reset() {
+		this.players = [];
+		this.setInitialPlayers();
 	}
 }
 

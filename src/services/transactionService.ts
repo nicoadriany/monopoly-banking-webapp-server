@@ -34,6 +34,15 @@ class TransactionService {
 			}
 		})
 	}
+	
+	setAllTransactions(transactions: Transaction[]) {
+		this.transactions = transactions;
+	}
+
+	reset() {
+		this.transactions = [];
+	}
+
 }
 
 export default new TransactionService();

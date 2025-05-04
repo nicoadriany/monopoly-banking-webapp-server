@@ -1,5 +1,4 @@
 import logger from "node-color-log";
-import { isValidNumber } from "../../helpers/helper";
 import Player from "../../models/player";
 import Transaction from "../../models/transaction";
 import User from "../../models/user";
@@ -10,7 +9,9 @@ import userService from "../../services/userService";
 
 export default function sendMoney(user: User, data: any) {
 	let receiverName: string = data.receiver;
-	let amount: number = data.amount;
+	let rawAmount: string = data.amount;
+	
+	let amount: number = parseInt(rawAmount);
 
 	let sender: Player = user.getPlayer();
 
