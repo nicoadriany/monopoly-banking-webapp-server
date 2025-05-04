@@ -24,5 +24,12 @@
     "build": "tsc"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "nodemonConfig": {
+    "ignore": [
+      "build/*",
+      "node_modules/*",
+      "savegame/*"
+    ]
+  }
 }

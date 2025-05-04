@@ -33,6 +33,12 @@ class ServerResponse {
 		});
 	}
 
+	sendNotificationToAllUsers(message: string) {
+		userService.getAllUsers().forEach((u) => {
+			this.sendNotification(u, message);
+		});
+	}
+
 	sendOnlineStatusToBank(player: Player, isOnline: boolean) {
 		let msg = {
 			playerName: player.name,

@@ -9,8 +9,10 @@ import userService from "../../services/userService";
 
 export default function giveMoney(user: User, data: any) {
 	let name: string = data.name;
-	let amount: number = data.amount;
+	let rawAmount: string = data.amount;
 	let reason: string = data.reason;
+
+	const amount: number = parseInt(rawAmount);
 
 	if (name == null || name.length < 1 || !Number.isInteger(amount) || amount < 1) {
 		logger.info("Invalid data given");
